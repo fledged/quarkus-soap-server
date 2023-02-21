@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ba232dbb-1c11-4780-a3fe-3b7fdb37cae2" activeEnvironment="Default" name="Test" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="aef01773-3c53-4d63-8e5d-ce6dedba821c" wsaVersion="NONE" name="MyServiceImplSoapBinding" type="wsdl" bindingName="{http://service.ws.fluegge.org/}MyServiceImplSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/soap/myservice?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/soap/myservice?wsdl"><con:part><con:url>http://localhost:8080/soap/myservice?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="MyServiceImpl" targetNamespace="http://service.ws.fluegge.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.ws.fluegge.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.ws.fluegge.org/">
+      <xsd:element name="add" type="tns:add"/>
+      <xsd:complexType name="add">
+        <xsd:sequence>
+          <xsd:element name="arg0" type="xsd:int"/>
+          <xsd:element name="arg1" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addResponse" type="tns:addResponse"/>
+      <xsd:complexType name="addResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="date" type="tns:date"/>
+      <xsd:complexType name="date">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:element name="dateResponse" type="tns:dateResponse"/>
+      <xsd:complexType name="dateResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="add">
+    <wsdl:part element="tns:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="date">
+    <wsdl:part element="tns:date" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="tns:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dateResponse">
+    <wsdl:part element="tns:dateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MyService">
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:add" name="add"></wsdl:input>
+      <wsdl:output message="tns:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="date">
+      <wsdl:input message="tns:date" name="date"></wsdl:input>
+      <wsdl:output message="tns:dateResponse" name="dateResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyServiceImplSoapBinding" type="tns:MyService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="date">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="date">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="dateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyServiceImpl">
+    <wsdl:port binding="tns:MyServiceImplSoapBinding" name="MyServicePort">
+      <soap:address location="http://localhost:8080/soap/myservice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/soap/myservice</con:endpoint></con:endpoints><con:operation id="a3f6bd3a-fabe-4bb4-85ba-697c06bd8f63" isOneWay="false" action="" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="add" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a28eecf9-0b89-4336-8a17-38d0bc0763af" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap/myservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.ws.fluegge.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:add>\r
+         <arg0>5</arg0>\r
+         <arg1>7</arg1>\r
+      </ser:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.ws.fluegge.org/MyService/add"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="93ca754a-7504-4c97-a701-90ee2c344849" isOneWay="false" action="" name="date" bindingOperationName="date" type="Request-Response" outputName="dateResponse" inputName="date" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8a334efc-8ea2-49a5-8c5d-4e5321511211" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap/myservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.ws.fluegge.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:date/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.ws.fluegge.org/MyService/date"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
